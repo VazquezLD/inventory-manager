@@ -1,64 +1,34 @@
-from classes import *
-from constants import *
-from functions import *
+from mainProducts import mainProducts
+from mainInventory import mainInventory
+from mainInventManager import mainInventoryManager
+from functionsProducts import menu
+
+def mainMenu ():
+    print('\n<<Main Menu - Navigate with the following options>>')
+    print('1- Products options.\n2- Inventory options\n3- Invetory manager options\n4- Exit')
+
 
 def main ():
-    inventories = []
-    inventoriesManagers = []
-    products = []
+    op = 0
     
-    op = -1
-    
-    while op <= 0:
-        menu()
+    while op >= 0:
+        mainMenu()
         op = int(input('\nChoose an option: '))
         while op <= 0:
-            menu()
+            mainMenu()
             op = int(input('\nChoose valid option: '))
 
         if op == 1:
-            if len(products) <= 0:
-                op = int(input('\nNo products loaded, please choose another: '))
-                while op <= 0:
-                    menu()
-                    op = int(input('\nChoose valid option: '))
-            else:
-                pass
+            mainProducts()
         
         elif op == 2:
+            mainInventory()
             
-            id = int(input('\nEnter product id: '))
-            while id < 0 or id > 1000:
-                id = int(input('Enter valid id: '))
-                
-            name = str(input('\nEnter product name: '))
-            while len(name) <= 2:
-                name = str(input('Enter valid name: '))
-                
-            category = str(input('\nEnter product category: '))
-            while category not in CATEGORIES:
-                category = str(input('Enter valid category: '))
-                
-            price = float(input('\nEnter product price: '))
-            while price <= 0:
-                price = float(input('Enter valid price: '))
-            
-            quantity = int(input('\nEnter product quantity: '))
-            while quantity <= 0:
-                quantity = int(input('Enter valid quantity: '))
-            
-            newProd = Product(id ,name ,category ,price ,quantity)
-            addInOrder(newProd, products)
-            print('\nADDED NEW PRODUCT --> ', newProd, 'SUCCESSFULLY.')
-            
-
         elif op == 3:
-            pass
+            mainInventoryManager()
         
         elif op == 4:
-            pass
+            print('\nGoodbye, thanks for use this software.')
+            break        
         
-        elif op == 5:
-            print('\nGoodbye ! Thanks for use this software.')
-            return
 main()

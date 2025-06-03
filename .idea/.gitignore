@@ -1,0 +1,28 @@
+# Ignorar archivos y carpetas de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# Ignorar entornos virtuales
+venv/
+env/
+.venv/
+.env/
+
+# Ignorar configuración de PyCharm / IntelliJ
+.idea/
+*.iml
+
+# Ignorar archivos de configuración del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignorar variables de entorno
+.env

@@ -20,15 +20,15 @@ class Inventory:
         self.products = products
         self.inventoryManager = inventoryManager
         
-    def showProducts(self):
-        cont = 0
-        
-        print('------------------------INVENTARIO DEL MES DE ', self.month,'----------------------------')
-        if len(self.products) > 0:
-            for product in self.products:
+    def calculateTotalBudget (products):
+        if products:
+            cont = 0
+            for product in products:
                 cont += product.price
-                print(product)
-        print('----------------------------MONTO TOTAL ESPERADO: $', cont,'-----------------------')
+        else:
+            cont = 0
+        return cont
+        
 
 class InventoryManager:
     def __init__ (self, name='', lastname='', age=18, sex='', inventory=None):
@@ -45,5 +45,4 @@ class InventoryManager:
                 f"| SEX: ${self.sex:^5} "
                 f"| INVENTORY: {self.inventory:^5} |")
 
-def menu():
-    print('\n1- Show products \n2- Create product \n3- Show inventories \n4- Create inventory \n5- Exit')
+
