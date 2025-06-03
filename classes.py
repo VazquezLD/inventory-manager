@@ -1,0 +1,49 @@
+class Product:
+    def __init__ (self, id=0, name='', category='', price=0, quantity=0):
+        self.id = id
+        self.name = name
+        self.category = category
+        self.price = price
+        self.quantity = quantity
+
+    def __str__(self):
+        return (f"| ID: {str(self.id):^5} "
+                f"| NAME: {self.name:^5} "
+                f"| CATEGORY: {self.category:^5} "
+                f"| PRICE: ${self.price:^5} "
+                f"| QUANTITY: {self.quantity:^5} |")
+    
+        
+class Inventory:
+    def __init__ (self, month='', products=[], inventoryManager=''):
+        self.month = month
+        self.products = products
+        self.inventoryManager = inventoryManager
+        
+    def showProducts(self):
+        cont = 0
+        
+        print('------------------------INVENTARIO DEL MES DE ', self.month,'----------------------------')
+        if len(self.products) > 0:
+            for product in self.products:
+                cont += product.price
+                print(product)
+        print('----------------------------MONTO TOTAL ESPERADO: $', cont,'-----------------------')
+
+class InventoryManager:
+    def __init__ (self, name='', lastname='', age=18, sex='', inventory=None):
+        self.name = name
+        self.lastname = lastname
+        self.age = age
+        self.sex = sex
+        self.inventory = inventory 
+    
+    def __str__(self):
+        return (f"| NAME: {str(self.name):^5} "
+                f"| LASTNAME: {self.lastname:^5} "
+                f"| AGE: {self.age:^5} "
+                f"| SEX: ${self.sex:^5} "
+                f"| INVENTORY: {self.inventory:^5} |")
+
+def menu():
+    print('\n1- Show products \n2- Create product \n3- Show inventories \n4- Create inventory \n5- Exit')
