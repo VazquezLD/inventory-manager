@@ -2,8 +2,7 @@ from classes import *
 from constants import *
 from functionsProducts import *
 
-def mainProducts ():
-    products = []
+def mainProducts (products, inventories):
     
     op = 0
     
@@ -27,7 +26,7 @@ def mainProducts ():
             if len(products) <= 0:
                 print('\nNo products loaded, please add some first using option 2.')
             else:
-                id = int(input('\nEnter id (if exists te product will be deleted): '))
+                id = int(input('\nEnter id (if exists the product will be deleted): '))
                 deleteProductById(id, products)
         
         elif op == 4:

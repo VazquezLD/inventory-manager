@@ -10,6 +10,9 @@ def mainMenu ():
 
 def main ():
     op = 0
+    products = []
+    inventories = []
+    inventoryManagers = []
     
     while op >= 0:
         mainMenu()
@@ -19,7 +22,7 @@ def main ():
             op = int(input('\nChoose valid option: '))
 
         if op == 1:
-            mainProducts()
+            mainProducts(products, inventories)
         
         elif op == 2:
             mainInventory()

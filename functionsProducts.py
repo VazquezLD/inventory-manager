@@ -20,7 +20,7 @@ def addInOrder(product, vect):
      
 def menu(element):
     print('\n<<', element,'Menu >>')
-    print('1- Show ', element ,'\n2- Create product' , element ,'\n3- Delete product', element ,'\n4- Menu')
+    print('1- Show', element ,'\n2- Create' , element ,'\n3- Delete', element , '\n4- Save', element,'\n5- Menu')
     
 def showProducts(products):
         if len(products) > 0:
@@ -38,9 +38,9 @@ def createProduct(products):
     while len(name) <= 2:
         name = str(input('Enter valid name: '))
                 
-    category = str(input('\nEnter product category: ')).lower()
+    category = str(input('\nEnter product category: ')).upper()
     while category not in CATEGORIES:
-        category = str(input('Enter valid category: ')).lower()
+        category = str(input('Enter valid category: ')).upper()
                 
     price = float(input('\nEnter product price: '))
     while price <= 0:
@@ -69,3 +69,18 @@ def deleteProductById (id, products):
         print('\nProduct doesnt match any.')
         
 
+def addProduct (products, inventories):
+
+    inv = str(input('Enter inventory month: ')).upper()
+    while inv not in MONTHS:
+        inv = str(input('Enter valid month: '))
+
+    for inventory in inventories:
+        if inventory.month == inv:
+            inventory.products = products
+            print('\nProducts added to', inv, 'inventory.')
+        print('That month doesnt have any inventory yet.')
+    
+
+
+    
