@@ -20,10 +20,10 @@ class Inventory:
         self.products = products
         self.inventoryManager = inventoryManager
         
-    def calculateTotalBudget (products):
-        if products:
+    def calculateTotalBudget (self):
+        if self.products:
             cont = 0
-            for product in products:
+            for product in self.products:
                 cont += product.price
         else:
             cont = 0

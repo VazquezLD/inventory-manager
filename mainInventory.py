@@ -1,8 +1,8 @@
 from functionsProducts import menu
 from functionsInventory import *
 
-def mainInventory ():
-    inventories = []
+def mainInventory (inventories, products):
+    
     op = 0
     
     while op >= 0:
@@ -13,16 +13,10 @@ def mainInventory ():
             op = int(input('\nChoose valid option: '))
 
         if op == 1:
-            if len(inventories) <= 0:
-                print('\nNo inventories loaded, please add some first using option 2.')
-            else:
-                month = str(input('\nEnter month: ')).lower()
-                while month not in MONTHS:
-                    month = str(input('Enter a valid month: ')).lower()
-                showInventory(month, inventories)
+            showInventory(inventories)
         
         elif op == 2:
-            createInventory(inventories)
+            createInventory(inventories, products)
         
         elif op == 3:
             if len(inventories) <= 0:

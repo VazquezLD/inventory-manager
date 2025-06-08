@@ -1,7 +1,6 @@
 from mainProducts import mainProducts
 from mainInventory import mainInventory
 from mainInventManager import mainInventoryManager
-from functionsProducts import menu
 
 def mainMenu ():
     print('\n<<Main Menu - Navigate with the following options>>')
@@ -25,7 +24,7 @@ def main ():
             mainProducts(products, inventories)
         
         elif op == 2:
-            mainInventory()
+            mainInventory(inventories, products)
             
         elif op == 3:
             mainInventoryManager()

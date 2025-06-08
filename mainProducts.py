@@ -30,4 +30,11 @@ def mainProducts (products, inventories):
                 deleteProductById(id, products)
         
         elif op == 4:
+            if products and inventories:
+                addProduct(products, inventories)
+            else:
+                print('No product or inventory records.')
+        
+        elif op == 5:
             return
+        
